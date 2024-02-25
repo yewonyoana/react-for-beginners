@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+// using the react-router-dom components to move to pages
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+// MOVIE APP
+// app.js will render a router (router = component that will be looking at the url and show us the components of the url), not show movies
+// function App() {
+// 	return (
+// 		<Router>
+// 			{/* switch will look for a route (url) and will render a component one at a time (in this case) */}
+// 			<Routes>
+// 				{/* when user is in "/movie" path, detail route will be rendered */}
+// 				<Route path="/movie/:id" element={<Detail />}>
+// 					<Detail />
+// 				</Route>
+// 				{/* when user is in "/" path, home route will be rendered */}
+// 				<Route path="/" element={<Home />}>
+// 					<Home />
+// 				</Route>
+// 			</Routes>
+// 		</Router>
+// 	);
+// }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const router = createBrowserRouter([
+		{
+			path: "/",
+			element: <Home />,
+		},
+		{
+			path: "/movie/:id",
+			element: <Detail />,
+		},
+	]);
+	return <RouterProvider router={router} />;
+};
 
 export default App;
