@@ -1,0 +1,55 @@
+.loading {
+	color: white;
+	font-size: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.homeBody {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.homeHeader {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.homeHeader img {
+	width: 50%;
+}
+
+.homeList {
+	width: 90%;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	padding: 50px;
+}
+
+.homeImg {
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 30px;
+}
+
+.homeTitle {
+	font-size: 25px;
+	font-style: italic;
+	text-transform: uppercase;
+	font-weight: 800;
+	color: black;
+}
+
+.poster {
+	padding: 10px;
+}

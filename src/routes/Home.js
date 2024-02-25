@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CharacterList from "../components/CharacterList";
+import styles from "../css/Home.module.css";
 
 function Home() {
 	const [loading, setLoading] = useState(true);
@@ -17,19 +18,24 @@ function Home() {
 		getMovies();
 	}, []);
 	return (
-		<div>
+		<div className={styles.homeBody}>
 			{loading ? (
-				<h1>Loading...</h1>
+				<h2 className={styles.loading}>Loading...</h2>
 			) : (
 				<div>
-					{characters.map((character) => (
-						<CharacterList
-							id={character.id}
-							key={character.id}
-							thumbnail={character.thumbnail}
-							name={character.name}
-						/>
-					))}
+					<header className={styles.homeHeader}>
+						<img src="https://rukminim2.flixcart.com/image/850/1000/jql8fbk0/poster/u/9/r/medium-pwl-wall-poster-13-19-inches-matte-finish-marvel-iron-man-original-imaek7kefasnynq8.jpeg?q=90&crop=false"></img>
+					</header>
+					<div className={styles.homeList}>
+						{characters.map((character) => (
+							<CharacterList
+								id={character.id}
+								key={character.id}
+								thumbnail={character.thumbnail}
+								name={character.name}
+							/>
+						))}
+					</div>
 				</div>
 			)}
 		</div>

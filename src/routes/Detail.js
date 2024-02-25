@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CharacterDetail from "../components/CharacterDetail";
+import styles from "../css/Detail.module.css";
 
 function Detail() {
 	const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ function Detail() {
 	return (
 		<div>
 			{loading ? (
-				<h1>Loading...</h1>
+				<h2 className={styles.loading}>Loading...</h2>
 			) : (
 				<div>
 					{details.map((detail) => (

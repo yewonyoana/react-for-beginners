@@ -1,15 +1,22 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from "../css/Home.module.css";
 
 function CharacterList({ id, thumbnail, name }) {
 	return (
-		<div key={id}>
-			<Link to={`/character/${id}`}>
-				<div>
-					<img src={thumbnail.path + "." + thumbnail.extension} alt={name} />
-				</div>
-				<div>{name}</div>
-			</Link>
+		<div>
+			<div key={id}>
+				<Link to={`/character/${id}`}>
+					<div className={styles.poster}>
+						<img
+							className={styles.homeImg}
+							src={thumbnail.path + "." + thumbnail.extension}
+							alt={name}
+						/>
+						<div className={styles.homeTitle}>{name}</div>
+					</div>
+				</Link>
+			</div>
 		</div>
 	);
 }
