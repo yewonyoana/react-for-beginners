@@ -7,6 +7,7 @@
 }
 
 .homeBody {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -33,6 +34,12 @@
 	align-items: center;
 	border-radius: 30px;
 	padding: 50px;
+	margin-bottom: 30px;
+}
+
+.poster {
+	position: relative;
+	padding: 10px;
 }
 
 .homeImg {
@@ -47,9 +54,26 @@
 	font-style: italic;
 	text-transform: uppercase;
 	font-weight: 800;
-	color: black;
+	color: white;
+	position: absolute;
+	top: 20px;
+	left: 25px;
+	display: none;
 }
 
-.poster {
-	padding: 10px;
+.poster:hover {
+	animation: enlarge 0.5s linear forwards;
+}
+
+.poster:hover .homeTitle {
+	display: unset;
+}
+
+@keyframes enlarge {
+	0% {
+		transform: none;
+	}
+	100% {
+		transform: scale(1.1);
+	}
 }
